@@ -1,30 +1,22 @@
 import React from "react";
 import "./App.css";
-
+import { connect } from "react-redux";
 class App extends React.Component {
-  state = {
-    age: 21,
-  };
-
   render() {
-    const ageUp=()=>{
-      this.setState({
-        age:this.state.age+1
-      })
-    }
-    const ageDown=()=>{
-      this.setState({
-        age:this.state.age-1
-      })
-    }
     return (
       <div className="App">
         <header className="App-header">
           <h2>Learning React-Redux class component way.</h2>
-          <h4>Age: {this.state.age}</h4>
+          <h4>Age: {this.props.age.count}</h4>
           <div>
-            <button onClick={ageUp}>Increase Age</button>
-            <button onClick={ageDown}>Decrease Age</button>
+            <button onClick={this.props.ageUp}>Increase Age</button>
+            <button onClick={this.props.ageDown}>Decrease Age</button>
+          </div>
+          <br/>
+          <h4>Tweets: {this.props.tweet.count}</h4>
+          <div>
+            <button onClick={this.props.tweetUp}>Increase Tweets</button>
+            <button onClick={this.props.tweetDown}>Decrease Tweets</button>
           </div>
         </header>
       </div>
@@ -32,4 +24,18 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  var data={age: state.Age , tweet: state.Tweets}
+  return data;
+};
+
+const mapDispatchToProps = (dispatch) => {
+  console.log("dispatch=",dispatch)
+  return {
+    ageUp: () => dispatch({ type: "AGE_UP" }),
+    ageDown: () => dispatch({ type: "AGE_DOWN" }),
+    tweetUp: () => dispatch({ type: "TWEET_UP" }),
+    tweetDown: () => dispatch({ type: "TWEET_DOWN" }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
