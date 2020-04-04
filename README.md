@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Tutorial for React-Redux along with a basic Redux-Thunk implementation.
 ## Available Scripts
 
 In the project directory, you can run:
