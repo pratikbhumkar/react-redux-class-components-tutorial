@@ -5,9 +5,18 @@ const DecreaseAge = (state=Age) =>{
     return state;
 }
 
+
 const IncreaseAge = (state= Age) =>{
     state.count++;
     return state;
 }
 
-export {DecreaseAge, IncreaseAge};
+const ageUp= () =>{
+    return dispatch=>{
+        setTimeout(() =>{
+            dispatch({type:"AGE_UP"})
+        },2000)
+    }
+}
+
+export {DecreaseAge, IncreaseAge, ageUp};

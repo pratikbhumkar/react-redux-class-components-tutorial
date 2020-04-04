@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
+import { ageUp } from "../src/store/AgeReducer/Operations/AgeOperations";
 class App extends React.Component {
   render() {
     return (
@@ -31,7 +32,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    ageUp: () => dispatch({ type: "AGE_UP" }),
+    ageUp: () => dispatch(ageUp()),
     ageDown: () => dispatch({ type: "AGE_DOWN" }),
     tweetUp: () => dispatch({ type: "TWEET_UP" }),
     tweetDown: () => dispatch({ type: "TWEET_DOWN" }),
