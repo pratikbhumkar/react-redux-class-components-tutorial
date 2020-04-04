@@ -11,12 +11,6 @@ const IncreaseAge = (state= Age) =>{
     return state;
 }
 
-const ageUp= () =>{
-    return dispatch=>{
-        setTimeout(() =>{
-            dispatch({type:"AGE_UP"})
-        },2000)
-    }
-}
 
-export {DecreaseAge, IncreaseAge, ageUp};
+
+export {DecreaseAge, IncreaseAge};
