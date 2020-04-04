@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { connect } from "react-redux";
-import { ageUp } from "../src/store/AgeReducer/Operations/AgeOperations";
+
 class App extends React.Component {
   render() {
     return (
