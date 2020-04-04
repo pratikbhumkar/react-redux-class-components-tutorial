@@ -30,7 +30,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("dispatch=",dispatch)
   return {
     ageUp: () => dispatch({ type: "AGE_UP" }),
     ageDown: () => dispatch({ type: "AGE_DOWN" }),
